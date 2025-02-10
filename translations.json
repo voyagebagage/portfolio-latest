@@ -1,0 +1,78 @@
+{
+  "en": {
+    "name": "John Doe",
+    "title": "Full Stack Developer",
+    "about": "I'm a passionate full stack developer with experience in React, Node.js, and database technologies.",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "fr": {
+    "name": "John Doe",
+    "title": "Développeur Full Stack",
+    "about": "Je suis un développeur full stack passionné avec de l'expérience en React, Node.js et technologies de base de données.",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "ru": {
+    "name": "Джон Доу",
+    "title": "Full Stack Разработчик",
+    "about": "Я увлеченный full stack разработчик с опытом работы с React, Node.js и технологиями баз данных.",
+    "skills": "Навыки",
+    "projects": "Проекты",
+    "contact": "Контакт"
+  },
+  "no": {
+    "name": "John Doe",
+    "title": "Full Stack Utvikler",
+    "about": "Jeg er en lidenskapelig full stack utvikler med erfaring i React, Node.js og databaseteknologier.",
+    "skills": "Ferdigheter",
+    "projects": "Prosjekter",
+    "contact": "Kontakt"
+  },
+  "gsw": {
+    "name": "John Doe",
+    "title": "Full Stack Entwickler",
+    "about": "Ich bi en passionierte Full Stack Entwickler mit Erfahrig in React, Node.js und Datebanktechnologie.",
+    "skills": "Fähigkeite",
+    "projects": "Projäkt",
+    "contact": "Kontakt"
+  },
+  "ja": {
+    "name": "ジョン・ドウ",
+    "title": "フルスタック開発者",
+    "about": "私はReact、Node.js、データベース技術の経験を持つ情熱的なフルスタック開発者です。",
+    "skills": "スキル",
+    "projects": "プロジェクト",
+    "contact": "連絡先"
+  },
+  "zh": {
+    "name": "约翰·多伊",
+    "title": "全栈开发工程师",
+    "about": "我是一名热情的全栈开发工程师，有React、Node.js和数据库技术的经验。",
+    "skills": "技能",
+    "projects": "项目",
+    "contact": "联系"
+  },
+  "es": {
+    "name": "John Doe",
+    "title": "Desarrollador Full Stack",
+    "about": "Soy un desarrollador full stack apasionado con experiencia en React, Node.js y tecnologías de bases de datos.",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "experience": "Experiencia"
+  },
+  "pt": {
+    "name": "John Doe",
+    "title": "Desenvolvedor Full Stack",
+    "about": "Sou um desenvolvedor full stack apaixonado com experiência em React, Node.js e tecnologias de banco de dados.",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "experience": "Experiência",
+    "current_stack": "Stack Atual"
+  }
+}
+
