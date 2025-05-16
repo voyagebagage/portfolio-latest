@@ -1,11 +1,18 @@
 {
   "en": {
-    "name": "John Doe",
-    "title": "Full Stack Developer",
-    "about": "I'm a passionate full stack developer with experience in React, Node.js, and database technologies.",
+    "name": "Olivier F.",
+    "title": "Full Stack JS Developer",
+    "about": "From 🎵+Music to 💻+Code, I transitioned into frontend/fullstack development during the pandemic, driven by a passion for problem-solving and creativity. After completing 🚀+Le+Réacteur bootcamp, I was fortunate to join 🥷+Ninja Partners where I myself developed a large size AWS fullstack project, and my last project was a 📱+Telegram+Crypto+Mining+App. Currently living between Thailand and Russia, and between pampers and code I work with ⚛️+React, ⚡+Next.js, 🔌+REST+APIs, and 🗄️+databases, with ☁️+AWS experience. <a href='#chat'>See my full stack skills</a> & <a href='#chat'>Questions 👇🏼</a>",
     "skills": "Skills",
+    "framework": "Next.js, React, Hono",
+    "backend": "Hono, Express Rest Api, GrapghQl",
+    "database": "SQL -> D1 Cloudflare, NoSQL -> Dynamo, MongoDb,",
+    "environment": "AWS -> Cognito , IAM , Amplify, DynamoDb; Cloudflare Worker",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "experience": "Experiences",
+    "education": "Education",
+    "stack": "Current Fave stack"
   },
   "fr": {
     "name": "John Doe",
@@ -13,7 +20,9 @@
     "about": "Je suis un développeur full stack passionné avec de l'expérience en React, Node.js et technologies de base de données.",
     "skills": "Compétences",
     "projects": "Projets",
-    "contact": "Contact"
+    "contact": "Contact",
+    "experience": "Expériences",
+    "education": "Éducation"
   },
   "ru": {
     "name": "Джон Доу",
@@ -21,7 +30,8 @@
     "about": "Я увлеченный full stack разработчик с опытом работы с React, Node.js и технологиями баз данных.",
     "skills": "Навыки",
     "projects": "Проекты",
-    "contact": "Контакт"
+    "contact": "Контакт",
+    "education": ""
   },
   "no": {
     "name": "John Doe",
@@ -29,7 +39,8 @@
     "about": "Jeg er en lidenskapelig full stack utvikler med erfaring i React, Node.js og databaseteknologier.",
     "skills": "Ferdigheter",
     "projects": "Prosjekter",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "education": ""
   },
   "gsw": {
     "name": "John Doe",
@@ -37,7 +48,8 @@
     "about": "Ich bi en passionierte Full Stack Entwickler mit Erfahrig in React, Node.js und Datebanktechnologie.",
     "skills": "Fähigkeite",
     "projects": "Projäkt",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "education": ""
   },
   "ja": {
     "name": "ジョン・ドウ",
@@ -45,7 +57,8 @@
     "about": "私はReact、Node.js、データベース技術の経験を持つ情熱的なフルスタック開発者です。",
     "skills": "スキル",
     "projects": "プロジェクト",
-    "contact": "連絡先"
+    "contact": "連絡先",
+    "education": ""
   },
   "zh": {
     "name": "约翰·多伊",
@@ -53,7 +66,8 @@
     "about": "我是一名热情的全栈开发工程师，有React、Node.js和数据库技术的经验。",
     "skills": "技能",
     "projects": "项目",
-    "contact": "联系"
+    "contact": "联系",
+    "education": ""
   },
   "es": {
     "name": "John Doe",
@@ -62,6 +76,7 @@
     "skills": "Habilidades",
     "projects": "Proyectos",
     "contact": "Contacto",
+    "education": "",
     "experience": "Experiencia"
   },
   "pt": {
@@ -71,8 +86,8 @@
     "skills": "Habilidades",
     "projects": "Projetos",
     "contact": "Contato",
+    "education": "",
     "experience": "Experiência",
     "current_stack": "Stack Atual"
   }
 }
-

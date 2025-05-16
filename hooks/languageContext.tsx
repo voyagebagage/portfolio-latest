@@ -30,9 +30,11 @@ interface TranslationKeys {
   contact: string;
   experience?: string;
   current_stack?: string;
+  education: string;
 }
 
 type Translations = Record<Language, TranslationKeys>;
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -48,7 +50,7 @@ export const languages: { code: Language; name: string }[] = [
   { code: "fr", name: "Français" },
   { code: "ru", name: "Русский" },
   { code: "no", name: "Norsk" },
-  { code: "gsw", name: "Schweizerdeutsch" },
+  { code: "gsw", name: "Ch-deutsch" },
   { code: "ja", name: "日本語" },
   { code: "zh", name: "中文" },
   { code: "es", name: "Español" },

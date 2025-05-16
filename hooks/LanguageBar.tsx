@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-// import { useLanguage, languages } from "./languageContext"
+import { cn } from "@/lib/utils";
 import { languages, useLanguage } from "./languageContext";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
@@ -9,17 +9,21 @@ const LanguageBar: React.FC = () => {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <ScrollArea className="w-full whitespace-nowrap rounded-md">
-      <div className="flex space-x-2 pb-2.5">
+    <ScrollArea
+      className="w-full whitespace-nowrap rounded-sm"
+      type="scroll"
+      scrollHideDelay={0}>
+      <div className="flex space-x-1 py-2 pl-2 ">
         {languages.map((lang) => (
           <button
             key={lang.code}
             onClick={() => setLanguage(lang.code)}
-            className={`inline-flex shrink-0 px-3 py-1 rounded ${
+            className={cn(
+              "inline-flex shrink-0  px-2 py-4 rounded transition-colors",
               language === lang.code
-                ? "bg-primary text-primary-foreground"
-                : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-            }`}>
+                ? "bg-[#7FA1C3] text-white"
+                : "text-[#6482AD] hover:bg-white/20 bg-[#E2DAD6]/45"
+            )}>
             {lang.name}
           </button>
         ))}
