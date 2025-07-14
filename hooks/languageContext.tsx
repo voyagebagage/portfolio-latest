@@ -39,6 +39,11 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: keyof TranslationKeys) => string;
+  // Chat functionality
+  triggerAutoChat: (message: string) => void;
+  shouldAutoSubmit: boolean;
+  setShouldAutoSubmit: (value: boolean) => void;
+  autoSubmitMessage: string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
@@ -62,6 +67,10 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [language, setLanguage] = useState<Language>("en");
 
+  // Chat state
+  const [shouldAutoSubmit, setShouldAutoSubmit] = useState(false);
+  const [autoSubmitMessage, setAutoSubmitMessage] = useState("");
+
   useEffect(() => {
     const userLang = navigator.language.split("-")[0] as Language;
     const supportedLang = languages.find((lang) => lang.code === userLang);
@@ -73,9 +82,30 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   const t = (key: keyof TranslationKeys): string => {
     return (translations as Translations)[language][key] || key;
   };
+  // Chat functionality
+  const triggerAutoChat = (message: string) => {
+    setAutoSubmitMessage(message);
+    setShouldAutoSubmit(true);
 
+    // Smooth scroll to chat
+    setTimeout(() => {
+      document.getElementById("chat")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  };
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider
+      value={{
+        language,
+        setLanguage,
+        t,
+        triggerAutoChat,
+        shouldAutoSubmit,
+        setShouldAutoSubmit,
+        autoSubmitMessage,
+      }}>
       {children}
     </LanguageContext.Provider>
   );
