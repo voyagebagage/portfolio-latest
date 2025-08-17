@@ -1,6 +1,7 @@
 "use client";
 
 import type React from "react";
+import { useRef } from "react";
 import { useLanguage } from "@/hooks/languageContext";
 import LanguageBar from "@/hooks/LanguageBar";
 import {
@@ -17,11 +18,18 @@ import {
 } from "@/components/ui/accordion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { ThemeProvider } from "@/components/theme-provider";
-import { AIChatBox } from "@/components/AIChatBot";
+import { AIChatBox, AIChatBoxRef } from "@/components/AIChatBot";
 import StyledAboutText from "@/components/StyleAboutText";
 
 const Portfolio: React.FC = () => {
   const { t } = useLanguage();
+  const chatBoxRef = useRef<AIChatBoxRef>(null);
+
+  const handleChatLinkClick = (message: string) => {
+    if (chatBoxRef.current) {
+      chatBoxRef.current.submitMessage(message);
+    }
+  };
 
   const experiences = [
     {
@@ -138,7 +146,10 @@ const Portfolio: React.FC = () => {
                   {t("title")}
                 </CardTitle>
                 <CardDescription className="text-[#6482AD]/80 mt-2 leading-relaxed">
-                  <StyledAboutText text={t("about")} />
+                  <StyledAboutText
+                    text={t("about")}
+                    onChatLinkClick={handleChatLinkClick}
+                  />
                 </CardDescription>
               </CardHeader>
             </div>
@@ -274,7 +285,7 @@ const Portfolio: React.FC = () => {
           {/* AI Chat Section */}
           <div className="max-w-2xl mx-auto p-4" id="chat">
             <div className="bg-gradient-to-r from-[#7FA1C3]/15 to-[#E2DAD6]/40 p-4 rounded-lg shadow-sm border border-[#7FA1C3]/20">
-              <AIChatBox />
+              <AIChatBox ref={chatBoxRef} />
             </div>
           </div>
         </div>

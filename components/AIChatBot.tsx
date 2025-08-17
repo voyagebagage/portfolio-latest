@@ -1,6 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import {
+  useState,
+  useRef,
+  useEffect,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -11,7 +17,12 @@ interface Message {
   content: string;
 }
 
-export function AIChatBox() {
+export interface AIChatBoxRef {
+  setInputValue: (value: string) => void;
+  submitMessage: (message: string) => void;
+}
+
+export const AIChatBox = forwardRef<AIChatBoxRef>((props, ref) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
@@ -21,6 +32,26 @@ export function AIChatBox() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useImperativeHandle(ref, () => ({
+    setInputValue: (value: string) => {
+      setInput(value);
+    },
+    submitMessage: (message: string) => {
+      if (!message.trim() || isLoading) return;
+
+      // Create a copy of the updated messages array with the new user message
+      const updatedMessages: Message[] = [
+        ...messages,
+        { role: "user" as const, content: message.trim() },
+      ];
+      // Set the messages state with the user message included
+      setMessages(updatedMessages);
+      setIsLoading(true);
+
+      handleSubmitMessage(message.trim());
+    },
+  }));
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -34,22 +65,8 @@ export function AIChatBox() {
     }
   }, [messages]);
 
-  // In your handleSubmit function in AIChatBox.tsx
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
-
-    const userMessage = input.trim();
-    setInput("");
-    // Create a copy of the updated messages array with the new user message
-    const updatedMessages: Message[] = [
-      ...messages,
-      { role: "user" as const, content: userMessage },
-    ];
-    // Set the messages state with the user message included
-    setMessages(updatedMessages);
-    setIsLoading(true);
-
+  // Extract API call logic into a separate function
+  const handleSubmitMessage = async (userMessage: string) => {
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
@@ -126,6 +143,25 @@ export function AIChatBox() {
     }
   };
 
+  // In your handleSubmit function in AIChatBox.tsx
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+
+    const userMessage = input.trim();
+    setInput("");
+    // Create a copy of the updated messages array with the new user message
+    const updatedMessages: Message[] = [
+      ...messages,
+      { role: "user" as const, content: userMessage },
+    ];
+    // Set the messages state with the user message included
+    setMessages(updatedMessages);
+    setIsLoading(true);
+
+    await handleSubmitMessage(userMessage);
+  };
+
   return (
     <Card className="w-full bg-[#F5EDED]/80 border border-[#7FA1C3]/30">
       <CardHeader className="">
@@ -175,4 +211,6 @@ export function AIChatBox() {
       </CardContent>
     </Card>
   );
-}
+});
+
+AIChatBox.displayName = "AIChatBox";

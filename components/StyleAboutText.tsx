@@ -2,9 +2,13 @@ import React from "react";
 
 interface StyledAboutTextProps {
   text: string;
+  onChatLinkClick?: (message: string) => void;
 }
 
-const StyledAboutText: React.FC<StyledAboutTextProps> = ({ text }) => {
+const StyledAboutText: React.FC<StyledAboutTextProps> = ({
+  text,
+  onChatLinkClick,
+}) => {
   // Function to render the processed text
   const renderProcessedText = () => {
     // First, handle the HTML anchor tags by replacing them with placeholders
@@ -27,7 +31,41 @@ const StyledAboutText: React.FC<StyledAboutTextProps> = ({ text }) => {
       // Check if this is an anchor placeholder
       if (part.startsWith("__ANCHOR_") && part.endsWith("__")) {
         const anchorIndex = parseInt(part.slice(9, -2));
-        console.log(anchorIndex);
+        const anchorHtml = anchors[anchorIndex];
+
+        // Parse the anchor to check if it's a chat link
+        const anchorMatch = anchorHtml.match(
+          /<a\s+href=['"]#chat['"][^>]*>(.*?)<\/a>/
+        );
+        if (anchorMatch && onChatLinkClick) {
+          const linkText = anchorMatch[1];
+          let message = "ask me anything";
+
+          // Check for specific stack-related text
+          if (linkText.toLowerCase().includes("stack")) {
+            message =
+              "What is your current favorite stack and why do you like it?";
+          } else if (linkText.toLowerCase().includes("question")) {
+            message = "ask me anything";
+          }
+
+          return (
+            <button
+              key={`anchor-${index}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onChatLinkClick(message);
+                // Scroll to chat section
+                const chatElement = document.getElementById("chat");
+                if (chatElement) {
+                  chatElement.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="text-[#6482AD] underline hover:text-[#7FA1C3] cursor-pointer bg-transparent border-none p-0 font-inherit">
+              {linkText}
+            </button>
+          );
+        }
 
         return (
           <span
