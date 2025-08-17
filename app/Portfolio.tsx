@@ -16,7 +16,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AIChatBox, AIChatBoxRef } from "@/components/AIChatBot";
 import StyledAboutText from "@/components/StyleAboutText";
@@ -175,6 +175,13 @@ const Portfolio: React.FC = () => {
                 className="text-[#6482AD] hover:text-[#7FA1C3] transition-colors">
                 <Mail className="w-6 h-6" />
               </a>
+              <a
+                href="https://wa.me/1234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#6482AD] hover:text-[#7FA1C3] transition-colors">
+                <MessageCircle className="w-6 h-6 whatsapp-pulse" />
+              </a>
             </div>
           </div>
 
@@ -193,10 +200,10 @@ const Portfolio: React.FC = () => {
                 </CardDescription>
 
                 {/* Navigation Buttons */}
-                <div className="flex flex-wrap gap-3 mt-8 pt-2 ">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-8 pt-2 w-full ml-1 pr-3">
                   <button
                     onClick={() => handleNavClick("stack")}
-                    className="px-4 py-1 bg-[#6482AD] bg-opacity-85 hover:bg-[#7FA1C3] text-white rounded-lg transition-colors shadow-sm text-sm font-medium transform"
+                    className="px-6 py-[6px] bg-[#6482AD] bg-opacity-85 hover:bg-[#7FA1C3] text-white rounded-md transition-colors shadow-sm text-sm font-medium transform"
                     style={{ transform: "skewX(-30deg)" }}>
                     <span
                       style={{ transform: "skewX(30deg)" }}
@@ -206,7 +213,7 @@ const Portfolio: React.FC = () => {
                   </button>
                   <button
                     onClick={() => handleNavClick("questions")}
-                    className="px-4 py-1 bg-[#7FA1C3] bg-opacity-85 hover:bg-[#6482AD] text-white rounded-lg transition-colors shadow-sm text-sm font-medium transform"
+                    className="px-6 py-[6px] bg-[#7FA1C3] bg-opacity-85 hover:bg-[#6482AD] text-white rounded-md transition-colors shadow-sm text-sm font-medium transform"
                     style={{ transform: "skewX(-30deg)" }}>
                     <span
                       style={{ transform: "skewX(30deg)" }}
@@ -216,7 +223,7 @@ const Portfolio: React.FC = () => {
                   </button>
                   <button
                     onClick={() => handleNavClick("projects")}
-                    className="px-4 py-1 bg-[#E2DAD6] bg-opacity-85 hover:bg-[#7FA1C3] text-[#6482AD] hover:text-white rounded-lg transition-colors shadow-sm text-sm font-medium transform"
+                    className="px-6 py-[6px] bg-[#E2DAD6] bg-opacity-85 hover:bg-[#7FA1C3] text-[#6482AD] hover:text-white rounded-md transition-colors shadow-sm text-sm font-medium transform"
                     style={{ transform: "skewX(-30deg)" }}>
                     <span
                       style={{ transform: "skewX(30deg)" }}
@@ -226,7 +233,7 @@ const Portfolio: React.FC = () => {
                   </button>
                   <button
                     onClick={() => handleNavClick("education")}
-                    className="px-4 py-1 bg-[#E2DAD6] bg-opacity-85 hover:bg-[#7FA1C3] text-[#6482AD] hover:text-white rounded-lg transition-colors shadow-sm text-sm font-medium transform"
+                    className="px-6 py-[6px] bg-[#E2DAD6] bg-opacity-85 hover:bg-[#7FA1C3] text-[#6482AD] hover:text-white rounded-md transition-colors shadow-sm text-sm font-medium transform"
                     style={{ transform: "skewX(-30deg)" }}>
                     <span
                       style={{ transform: "skewX(30deg)" }}
@@ -291,8 +298,10 @@ const Portfolio: React.FC = () => {
             </h2>
             <div className="space-y-2">
               {projects.map((project) => (
-                <div key={project.name} className="border-b border-border">
-                  <Accordion type="single" collapsible>
+                <div
+                  key={project.name}
+                  className="border-b border-border hover:bg-white/20 bg-gradient-to-b from-[#E2DAD6]/0 via-[#E2DAD6]/10 to-[#E2DAD6]/40 px-4 p-0 rounded w-full">
+                  <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value={project.name} className="border-none">
                       <AccordionTrigger className="hover:no-underline w-full">
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full">
@@ -334,8 +343,10 @@ const Portfolio: React.FC = () => {
             </h2>
             <div className="space-y-2">
               {education.map((edu) => (
-                <div key={edu.degree} className="border-b border-border">
-                  <Accordion type="single" collapsible>
+                <div
+                  key={edu.degree}
+                  className="border-b border-border hover:bg-white/20 bg-gradient-to-b from-[#E2DAD6]/0 via-[#E2DAD6]/10 to-[#E2DAD6]/40 px-4 p-0 rounded w-full">
+                  <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value={edu.degree} className="border-none">
                       <AccordionTrigger className="hover:no-underline w-full">
                         <div className="text-left w-full">

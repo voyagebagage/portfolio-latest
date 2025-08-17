@@ -10,6 +10,22 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .whatsapp-pulse {
+    animation: whatsappPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes whatsappPulse {
+    0%,
+    100% {
+      transform: scale(1);
+      filter: drop-shadow(0 0 0px rgba(116, 130, 173, 0));
+    }
+    50% {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 12px rgba(116, 130, 173, 0.8));
+    }
+  }
 }
 
 @layer base {
