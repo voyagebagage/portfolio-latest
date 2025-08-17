@@ -15,14 +15,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Github, Linkedin, Mail, Moon, Sun } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { ThemeProvider, useTheme } from "@/components/theme-provider";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { ThemeProvider } from "@/components/theme-provider";
 import { AIChatBox } from "@/components/AIChatBot";
 import StyledAboutText from "@/components/StyleAboutText";
 
 const Portfolio: React.FC = () => {
-  const { t, triggerAutoChat } = useLanguage();
+  const { t } = useLanguage();
 
   const experiences = [
     {
@@ -94,13 +93,6 @@ const Portfolio: React.FC = () => {
     },
   ];
 
-  const handleStackClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const message = `Tell me about ${t(
-      "name"
-    )}'s technical stack and experience. Here's his profile: ${t("about")}`;
-    triggerAutoChat(message);
-  };
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-gradient-to-br from-[#F5EDED] to-[#E2DAD6] text-foreground">
@@ -147,12 +139,6 @@ const Portfolio: React.FC = () => {
                 </CardTitle>
                 <CardDescription className="text-[#6482AD]/80 mt-2 leading-relaxed">
                   <StyledAboutText text={t("about")} />
-                  <a
-                    href="#chat"
-                    onClick={handleStackClick}
-                    className="inline-flex items-center gap-2 text-[#6482AD] hover:text-[#7FA1C3] font-medium transition-colors">
-                    See my stack
-                  </a>
                 </CardDescription>
               </CardHeader>
             </div>

@@ -1,13 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardFooter,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2, Send } from "lucide-react";
@@ -17,13 +11,6 @@ interface Message {
   content: string;
 }
 
-interface StreamChunk {
-  choices: {
-    delta: {
-      content?: string;
-    };
-  }[];
-}
 export function AIChatBox() {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -55,9 +42,9 @@ export function AIChatBox() {
     const userMessage = input.trim();
     setInput("");
     // Create a copy of the updated messages array with the new user message
-    const updatedMessages = [
+    const updatedMessages: Message[] = [
       ...messages,
-      { role: "user", content: userMessage },
+      { role: "user" as const, content: userMessage },
     ];
     // Set the messages state with the user message included
     setMessages(updatedMessages);
@@ -118,7 +105,7 @@ export function AIChatBox() {
                   }
                 });
               }
-            } catch (e) {
+            } catch {
               // Skip invalid JSON
               continue;
             }
