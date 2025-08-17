@@ -31,6 +31,46 @@ const Portfolio: React.FC = () => {
     }
   };
 
+  const handleNavClick = (section: string) => {
+    switch (section) {
+      case "stack":
+        // Scroll to chat and ask about stack
+        const chatElement = document.getElementById("chat");
+        if (chatElement) {
+          chatElement.scrollIntoView({ behavior: "smooth" });
+          setTimeout(() => {
+            if (chatBoxRef.current) {
+              chatBoxRef.current.submitMessage(
+                "What is your current favorite stack and why do you like it?"
+              );
+            }
+          }, 500);
+        }
+        break;
+      case "questions":
+        // Just scroll to chat
+        const chatEl = document.getElementById("chat");
+        if (chatEl) {
+          chatEl.scrollIntoView({ behavior: "smooth" });
+        }
+        break;
+      case "projects":
+        // Scroll to projects section
+        const projectsEl = document.getElementById("projects");
+        if (projectsEl) {
+          projectsEl.scrollIntoView({ behavior: "smooth" });
+        }
+        break;
+      case "education":
+        // Scroll to education section
+        const educationEl = document.getElementById("education");
+        if (educationEl) {
+          educationEl.scrollIntoView({ behavior: "smooth" });
+        }
+        break;
+    }
+  };
+
   const experiences = [
     {
       year: 2024,
@@ -151,6 +191,50 @@ const Portfolio: React.FC = () => {
                     onChatLinkClick={handleChatLinkClick}
                   />
                 </CardDescription>
+
+                {/* Navigation Buttons */}
+                <div className="flex flex-wrap gap-3 mt-8 pt-2 ">
+                  <button
+                    onClick={() => handleNavClick("stack")}
+                    className="px-4 py-1 bg-[#6482AD] bg-opacity-85 hover:bg-[#7FA1C3] text-white rounded-lg transition-colors shadow-sm text-sm font-medium transform"
+                    style={{ transform: "skewX(-30deg)" }}>
+                    <span
+                      style={{ transform: "skewX(30deg)" }}
+                      className="block">
+                      See my stack
+                    </span>
+                  </button>
+                  <button
+                    onClick={() => handleNavClick("questions")}
+                    className="px-4 py-1 bg-[#7FA1C3] bg-opacity-85 hover:bg-[#6482AD] text-white rounded-lg transition-colors shadow-sm text-sm font-medium transform"
+                    style={{ transform: "skewX(-30deg)" }}>
+                    <span
+                      style={{ transform: "skewX(30deg)" }}
+                      className="block">
+                      Questions
+                    </span>
+                  </button>
+                  <button
+                    onClick={() => handleNavClick("projects")}
+                    className="px-4 py-1 bg-[#E2DAD6] bg-opacity-85 hover:bg-[#7FA1C3] text-[#6482AD] hover:text-white rounded-lg transition-colors shadow-sm text-sm font-medium transform"
+                    style={{ transform: "skewX(-30deg)" }}>
+                    <span
+                      style={{ transform: "skewX(30deg)" }}
+                      className="block">
+                      Projects
+                    </span>
+                  </button>
+                  <button
+                    onClick={() => handleNavClick("education")}
+                    className="px-4 py-1 bg-[#E2DAD6] bg-opacity-85 hover:bg-[#7FA1C3] text-[#6482AD] hover:text-white rounded-lg transition-colors shadow-sm text-sm font-medium transform"
+                    style={{ transform: "skewX(-30deg)" }}>
+                    <span
+                      style={{ transform: "skewX(30deg)" }}
+                      className="block">
+                      Education
+                    </span>
+                  </button>
+                </div>
               </CardHeader>
             </div>
           </Card>
@@ -201,7 +285,7 @@ const Portfolio: React.FC = () => {
           </div>
 
           {/* Projects Section */}
-          <div className="mb-8">
+          <div className="mb-8" id="projects">
             <h2 className="text-2xl font-bold mb-4 text-[#6482AD] border-b border-[#7FA1C3]/30 pb-2 inline-block">
               {t("projects")}
             </h2>
@@ -244,42 +328,37 @@ const Portfolio: React.FC = () => {
           </div>
 
           {/* Education Section */}
-          <div className="mb-8">
-            <Accordion type="single" collapsible>
-              <AccordionItem value="education">
-                <AccordionTrigger className="text-2xl font-bold text-[#6482AD] hover:text-[#6482AD]/70 border-b border-[#7FA1C3]/30 pb-2">
-                  {t("education")}
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-4 pt-4">
-                    {education.map((edu) => (
-                      <div
-                        key={edu.degree}
-                        className="border-b border-border pb-4">
-                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                          <div>
-                            <h3 className="text-xl font-medium text-[#7FA1C3]">
-                              {edu.degree}
-                            </h3>
-                            <p className="text-muted-foreground">
-                              {edu.institution}
-                            </p>
-                          </div>
-                          <span className="text-muted-foreground">
-                            {edu.year}
-                          </span>
+          <div className="mb-8" id="education">
+            <h2 className="text-2xl font-bold mb-4 text-[#6482AD] border-b border-[#7FA1C3]/30 pb-2 inline-block">
+              {t("education")}
+            </h2>
+            <div className="space-y-2">
+              {education.map((edu) => (
+                <div key={edu.degree} className="border-b border-border">
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value={edu.degree} className="border-none">
+                      <AccordionTrigger className="hover:no-underline w-full">
+                        <div className="text-left w-full">
+                          <h3 className="text-xl font-medium text-[#7FA1C3]">
+                            {edu.degree}
+                          </h3>
+                          <p className="text-muted-foreground">
+                            {edu.institution} • {edu.year}
+                          </p>
                         </div>
-                        <ul className="list-disc pl-4 mt-2 text-sm text-muted-foreground">
+                      </AccordionTrigger>
+                      <AccordionContent className="pt-2">
+                        <ul className="list-disc pl-4 text-sm text-muted-foreground">
                           {edu.details.map((detail, index) => (
                             <li key={index}>{detail}</li>
                           ))}
                         </ul>
-                      </div>
-                    ))}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* AI Chat Section */}
