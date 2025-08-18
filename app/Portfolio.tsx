@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useLanguage } from "@/hooks/languageContext";
 import LanguageBar from "@/hooks/LanguageBar";
 import {
@@ -24,6 +24,7 @@ import StyledAboutText from "@/components/StyleAboutText";
 const Portfolio: React.FC = () => {
   const { t } = useLanguage();
   const chatBoxRef = useRef<AIChatBoxRef>(null);
+  const [activeAccordion, setActiveAccordion] = useState<string>("");
 
   const handleChatLinkClick = (message: string) => {
     if (chatBoxRef.current) {
@@ -289,9 +290,20 @@ const Portfolio: React.FC = () => {
                   key={exp.year}
                   className="border-b border-border hover:bg-white/20 bg-gradient-to-b from-[#E2DAD6]/0 via-[#E2DAD6]/10 to-[#E2DAD6]/40 px-4 p-0 rounded w-full">
                   {exp.details && exp.details.length > 0 ? (
-                    <Accordion type="single" collapsible className="w-full">
+                    <Accordion
+                      type="single"
+                      collapsible
+                      className="w-full"
+                      value={
+                        activeAccordion === `exp-${exp.year}`
+                          ? `exp-${exp.year}`
+                          : ""
+                      }
+                      onValueChange={(value) =>
+                        setActiveAccordion(value || "")
+                      }>
                       <AccordionItem
-                        value={exp.year.toString()}
+                        value={`exp-${exp.year}`}
                         className="border-none ">
                         <AccordionTrigger className="hover:no-underline flex justify-between">
                           <span className="text-2xl font-bold text-[#7FA1C3]">
@@ -355,8 +367,19 @@ const Portfolio: React.FC = () => {
                 <div
                   key={project.name}
                   className="border-b border-border hover:bg-white/20 bg-gradient-to-b from-[#E2DAD6]/0 via-[#E2DAD6]/10 to-[#E2DAD6]/40 px-4 p-0 rounded w-full">
-                  <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value={project.name} className="border-none">
+                  <Accordion
+                    type="single"
+                    collapsible
+                    className="w-full"
+                    value={
+                      activeAccordion === `project-${project.name}`
+                        ? `project-${project.name}`
+                        : ""
+                    }
+                    onValueChange={(value) => setActiveAccordion(value || "")}>
+                    <AccordionItem
+                      value={`project-${project.name}`}
+                      className="border-none">
                       <AccordionTrigger className="hover:no-underline w-full">
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full">
                           <div className="  text-left">
@@ -410,8 +433,21 @@ const Portfolio: React.FC = () => {
                   key={edu.degree}
                   className="border-b border-border hover:bg-white/20 bg-gradient-to-b from-[#E2DAD6]/0 via-[#E2DAD6]/10 to-[#E2DAD6]/40 px-4 p-0 rounded w-full">
                   {edu.details && edu.details.length > 0 ? (
-                    <Accordion type="single" collapsible className="w-full">
-                      <AccordionItem value={edu.degree} className="border-none">
+                    <Accordion
+                      type="single"
+                      collapsible
+                      className="w-full"
+                      value={
+                        activeAccordion === `edu-${edu.degree}`
+                          ? `edu-${edu.degree}`
+                          : ""
+                      }
+                      onValueChange={(value) =>
+                        setActiveAccordion(value || "")
+                      }>
+                      <AccordionItem
+                        value={`edu-${edu.degree}`}
+                        className="border-none">
                         <AccordionTrigger className="hover:no-underline w-full">
                           <div className="text-left w-full">
                             <h3 className="text-xl font-medium text-[#7FA1C3]">
