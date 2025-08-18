@@ -7,11 +7,13 @@ This portfolio includes an AI assistant chatbot that can answer questions about 
 If you're seeing a 404 error with LlamaAPI, check the following:
 
 1. **API URL**: Make sure you're using the correct API endpoint URL. The code now uses:
+
    ```
    https://api.llama-api.com/chat/completions
    ```
 
 2. **API Key**: Ensure your API key is valid and properly set in your `.env.local` file:
+
    ```
    NEXT_PUBLIC_LLAMA_API_KEY=your_llama_api_key_here
    ```
@@ -36,6 +38,7 @@ To personalize the chatbot with your information:
 If you want to try a different AI provider, you can:
 
 1. Add your API key to `.env.local`:
+
    ```
    # OpenAI API (most reliable)
    NEXT_PUBLIC_OPENAI_API_KEY=your_openai_api_key_here

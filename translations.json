@@ -2,7 +2,7 @@
   "en": {
     "name": "Olivier F.",
     "title": "Full Stack TS Developer 🇫🇷",
-    "about": "From 🎵+Music to 💻+Code, I transitioned into development during the pandemic, I always wanted to get into coding because I like solving problems. After completing 🚀+Le+Réacteur bootcamp, I was fortunate to join the 🥷+Ninja+Partners team where they trusted me for their ☁️+AWS+fullstack+project, and my last project was a 📱+Telegram+Crypto+Mining+App. Currently living between 🇹🇭+Thailand and 🇫🇷+France.  I work with ⚛️+React, +Next.js, REST+APIs, and ⛁+databases. <a href='#chat'>See my stack</a> or <a href='#chat'>Questions 👇🏼</a>",
+    "about": "Pandemic career shift: 🎵+Music → 💻+Code. Problem-solver who completed 🚀+Le+Réacteur bootcamp and joined the 🥷+Ninja+Partners team where they trusted me for their ☁️+AWS+development. . Recent work includes 📱+Telegram+Crypto+Mining+App. 🇹🇭+Thailand/🇫🇷+France-based developer specializing in ⚛️+React, +Next.js, REST+APIs, and ⛁+databases. <a href='#chat'>See my stack</a> or <a href='#chat'>Questions 👇🏼</a>",
     "skills": "Skills",
     "framework": "Next.js, React, Hono",
     "backend": "Hono, Express Rest Api, GrapghQl",
@@ -12,7 +12,12 @@
     "contact": "Contact",
     "experience": "Experiences",
     "education": "Education",
-    "stack": "Current Fave stack"
+    "stack": "Current Fave stack",
+    "technical_leadership": "Technical Leadership",
+    "business_impact": "Business Impact",
+    "current_learning": "Current Learning/Growth",
+    "soft_skills": "Soft Skills with Context",
+    "additional_info": "- Led migration from REST to GraphQL, reducing API calls by 60%\n- Architected serverless solution on AWS, reducing costs by 30%\n- Implemented CI/CD pipeline, improving deployment frequency from weekly to daily\n- Delivered features that increased user engagement by X%\n- Optimized database queries reducing response time from Xms to Yms\n- Built responsive components used across 15+ pages\n- Cross-functional collaboration: Worked closely with designers and product managers\n- Problem-solving: Successfully debugged complex race conditions in distributed systems\n- Communication: Documented APIs used by 5+ frontend developers"
   },
   "fr": {
     "name": "John Doe",

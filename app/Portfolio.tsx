@@ -151,7 +151,7 @@ const Portfolio: React.FC = () => {
           </div>
 
           {/* Header Section */}
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 pr-8">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 pr-8">
             <h1 className="text-3xl sm:text-4xl font-bold text-[#6482AD]">
               {t("name")}
             </h1>
@@ -176,7 +176,7 @@ const Portfolio: React.FC = () => {
                 <Mail className="w-6 h-6" />
               </a>
               <a
-                href="https://wa.me/1234567890"
+                href="https://wa.me/33769654361"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#6482AD] hover:text-[#7FA1C3] transition-colors">
@@ -192,7 +192,7 @@ const Portfolio: React.FC = () => {
                 <CardTitle className="text-2xl text-[#6482AD] font-bold">
                   {t("title")}
                 </CardTitle>
-                <CardDescription className="text-[#6482AD]/80 mt-2 leading-relaxed">
+                <CardDescription className="text-[#6482AD]/80 mt-2 leading-[1.7]">
                   <StyledAboutText
                     text={t("about")}
                     onChatLinkClick={handleChatLinkClick}

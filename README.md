@@ -15,6 +15,7 @@ A modern portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 The portfolio includes an AI assistant chatbot that can answer questions about the portfolio owner. To configure it:
 
 1. **Customize personal information**:
+
    - Edit the system prompt in `/app/api/chat/route.ts` to include your own information
    - The system prompt contains sections for experience, skills, projects, education, and response guidelines
 
