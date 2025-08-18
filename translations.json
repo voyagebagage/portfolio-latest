@@ -3,97 +3,81 @@
     "name": "Olivier F.",
     "title": "Full Stack TS Developer 🇫🇷",
     "about": "Pandemic career shift: 🎵+Music → 💻+Code. Problem-solver who completed 🚀+Le+Réacteur bootcamp and joined the 🥷+Ninja+Partners team where they trusted me for their ☁️+AWS+development. . Recent work includes 📱+Telegram+Crypto+Mining+App. 🇹🇭+Thailand/🇫🇷+France-based developer specializing in ⚛️+React, +Next.js, REST+APIs, and ⛁+databases. <a href='#chat'>See my stack</a> or <a href='#chat'>Questions 👇🏼</a>",
-    "skills": "Skills",
-    "framework": "Next.js, React, Hono",
-    "backend": "Hono, Express Rest Api, GrapghQl",
-    "database": "SQL -> D1 Cloudflare, NoSQL -> Dynamo, MongoDb,",
-    "environment": "AWS -> Cognito , IAM , Amplify, DynamoDb; Cloudflare Worker",
     "projects": "Projects",
     "contact": "Contact",
     "experience": "Experiences",
-    "education": "Education",
-    "stack": "Current Fave stack",
-    "technical_leadership": "Technical Leadership",
-    "business_impact": "Business Impact",
-    "current_learning": "Current Learning/Growth",
-    "soft_skills": "Soft Skills with Context",
-    "additional_info": "- Led migration from REST to GraphQL, reducing API calls by 60%\n- Architected serverless solution on AWS, reducing costs by 30%\n- Implemented CI/CD pipeline, improving deployment frequency from weekly to daily\n- Delivered features that increased user engagement by X%\n- Optimized database queries reducing response time from Xms to Yms\n- Built responsive components used across 15+ pages\n- Cross-functional collaboration: Worked closely with designers and product managers\n- Problem-solving: Successfully debugged complex race conditions in distributed systems\n- Communication: Documented APIs used by 5+ frontend developers"
+    "education": "Education"
   },
   "fr": {
-    "name": "John Doe",
-    "title": "Développeur Full Stack",
-    "about": "Je suis un développeur full stack passionné avec de l'expérience en React, Node.js et technologies de base de données.",
-    "skills": "Compétences",
+    "name": "Olivier F.",
+    "title": "Développeur Full Stack TS 🇫🇷",
+    "about": "Reconversion pandémie : 🎵+Musique → 💻+Code. Résolveur de problèmes qui a terminé le bootcamp 🚀+Le+Réacteur et rejoint l'équipe 🥷+Ninja+Partners où ils m'ont fait confiance pour leur développement ☁️+AWS. Travaux récents incluent 📱+Telegram+Crypto+Mining+App. Développeur basé en 🇹🇭+Thaïlande/🇫🇷+France spécialisé en ⚛️+React, +Next.js, API+REST, et ⛁+bases+de+données. <a href='#chat'>Voir ma stack</a> ou <a href='#chat'>Questions 👇🏼</a>",
     "projects": "Projets",
     "contact": "Contact",
     "experience": "Expériences",
-    "education": "Éducation",
-    "stack": "Stack Actuel"
+    "education": "Éducation"
   },
   "ru": {
-    "name": "Джон Доу",
-    "title": "Full Stack Разработчик",
-    "about": "Я увлеченный full stack разработчик с опытом работы с React, Node.js и технологиями баз данных.",
-    "skills": "Навыки",
+    "name": "Olivier F.",
+    "title": "Full Stack TS Разработчик 🇫🇷",
+    "about": "Смена карьеры из-за пандемии: 🎵+Музыка → 💻+Код. Решатель проблем, который завершил буткэмп 🚀+Le+Réacteur и присоединился к команде 🥷+Ninja+Partners, где мне доверили разработку ☁️+AWS. Недавние работы включают 📱+Telegram+Crypto+Mining+App. Разработчик из 🇹🇭+Таиланда/🇫🇷+Франции, специализирующийся на ⚛️+React, +Next.js, REST+API, и ⛁+базах+данных. <a href='#chat'>Посмотреть мой стек</a> или <a href='#chat'>Вопросы 👇🏼</a>",
     "projects": "Проекты",
     "contact": "Контакт",
-    "education": ""
+    "experience": "Опыт",
+    "education": "Образование"
   },
   "no": {
-    "name": "John Doe",
-    "title": "Full Stack Utvikler",
-    "about": "Jeg er en lidenskapelig full stack utvikler med erfaring i React, Node.js og databaseteknologier.",
-    "skills": "Ferdigheter",
+    "name": "Olivier F.",
+    "title": "Full Stack TS Utvikler 🇫🇷",
+    "about": "Pandemisk karriereskifte: 🎵+Musikk → 💻+Kode. Problemløser som fullførte 🚀+Le+Réacteur bootcamp og ble med 🥷+Ninja+Partners teamet hvor de stolte på meg for deres ☁️+AWS+utvikling. Nylig arbeid inkluderer 📱+Telegram+Crypto+Mining+App. 🇹🇭+Thailand/🇫🇷+Frankrike-basert utvikler som spesialiserer seg i ⚛️+React, +Next.js, REST+APIer, og ⛁+databaser. <a href='#chat'>Se min stack</a> eller <a href='#chat'>Spørsmål 👇🏼</a>",
     "projects": "Prosjekter",
     "contact": "Kontakt",
-    "education": ""
+    "experience": "Erfaring",
+    "education": "Utdanning"
   },
   "gsw": {
-    "name": "John Doe",
-    "title": "Full Stack Entwickler",
-    "about": "Ich bi en passionierte Full Stack Entwickler mit Erfahrig in React, Node.js und Datebanktechnologie.",
-    "skills": "Fähigkeite",
+    "name": "Olivier F.",
+    "title": "Full Stack TS Entwickler 🇫🇷",
+    "about": "Pandemie Karrierewächsel: 🎵+Musig → 💻+Code. Problemlöser wo s 🚀+Le+Réacteur Bootcamp gmacht het und zum 🥷+Ninja+Partners Team cho isch, wo si mir für ihri ☁️+AWS+Entwicklig vertraut händ. Letschti Arbeit schliesst 📱+Telegram+Crypto+Mining+App ii. 🇹🇭+Thailand/🇫🇷+Frankriich-basierte Entwickler wo sich uf ⚛️+React, +Next.js, REST+APIs, und ⛁+Datebanke spezialisiert. <a href='#chat'>Lueg mini Stack aa</a> oder <a href='#chat'>Frage 👇🏼</a>",
     "projects": "Projäkt",
     "contact": "Kontakt",
-    "education": ""
+    "experience": "Erfahrig",
+    "education": "Bildig"
   },
   "ja": {
-    "name": "ジョン・ドウ",
-    "title": "フルスタック開発者",
-    "about": "私はReact、Node.js、データベース技術の経験を持つ情熱的なフルスタック開発者です。",
-    "skills": "スキル",
+    "name": "Olivier F.",
+    "title": "Full Stack TS 開発者 🇫🇷",
+    "about": "パンデミックによるキャリアチェンジ： 🎵+音楽 → 💻+コード。 🚀+Le+Réacteur ブートキャンプを修了し、 🥷+Ninja+Partners チームに参加して彼らの ☁️+AWS 開発を任された問題解決者 。最近の作品には 📱+Telegram+Crypto+Mining+App があります。 🇹🇭+タイ/🇫🇷+フランスベースの開発者で、 ⚛️+React、 +Next.js、 REST+API 、および ⛁+データベースを専門としています。 <a href='#chat'> スタックを見る</a> または <a href='#chat'> 質問👇🏼</a>",
     "projects": "プロジェクト",
     "contact": "連絡先",
-    "education": ""
+    "experience": "経験",
+    "education": "学歴"
   },
   "zh": {
-    "name": "约翰·多伊",
-    "title": "全栈开发工程师",
-    "about": "我是一名热情的全栈开发工程师，有React、Node.js和数据库技术的经验。",
-    "skills": "技能",
+    "name": "Olivier F.",
+    "title": "Full Stack TS 开发工程师 🇫🇷",
+    "about": "疫情期间职业转型： 🎵+音乐 → 💻+编程。 完成了 🚀+Le+Réacteur 训练营并加入了 🥷+Ninja+Partners 团队，他们信任我进行 ☁️+AWS 开发的问题解决者。最近的工作包括 📱+Telegram+Crypto+Mining+App。基于 🇹🇭+泰国/🇫🇷+法国的开发者， 专业于 ⚛️+React、+Next.js、REST+API和 ⛁+数据库。 <a href='#chat'> 查看我的技术栈</a> 或 <a href='#chat'> 问题👇🏼</a>",
     "projects": "项目",
     "contact": "联系",
-    "education": ""
+    "experience": "经验",
+    "education": "教育"
   },
   "es": {
-    "name": "John Doe",
-    "title": "Desarrollador Full Stack",
-    "about": "Soy un desarrollador full stack apasionado con experiencia en React, Node.js y tecnologías de bases de datos.",
-    "skills": "Habilidades",
+    "name": "Olivier F.",
+    "title": "Desarrollador Full Stack TS 🇫🇷",
+    "about": "Cambio de carrera pandémico: 🎵+Música → 💻+Código. Solucionador de problemas que completó el bootcamp 🚀+Le+Réacteur y se unió al equipo 🥷+Ninja+Partners donde confiaron en mí para su desarrollo ☁️+AWS. El trabajo reciente incluye 📱+Telegram+Crypto+Mining+App. Desarrollador con base en 🇹🇭+Tailandia/🇫🇷+Francia especializado en ⚛️+React, +Next.js, APIs+REST, y ⛁+bases+de+datos. <a href='#chat'>Ver mi stack</a> o <a href='#chat'>Preguntas 👇🏼</a>",
     "projects": "Proyectos",
     "contact": "Contacto",
-    "education": "",
-    "experience": "Experiencia"
+    "experience": "Experiencia",
+    "education": "Educación"
   },
   "pt": {
-    "name": "John Doe",
-    "title": "Desenvolvedor Full Stack",
-    "about": "Sou um desenvolvedor full stack apaixonado com experiência em React, Node.js e tecnologias de banco de dados.",
-    "skills": "Habilidades",
+    "name": "Olivier F.",
+    "title": "Desenvolvedor Full Stack TS 🇫🇷",
+    "about": "Mudança de carreira pandêmica: 🎵+Música → 💻+Código. Solucionador de problemas que completou o bootcamp 🚀+Le+Réacteur e se juntou à equipe 🥷+Ninja+Partners onde confiaram em mim para o desenvolvimento ☁️+AWS. Trabalho recente inclui 📱+Telegram+Crypto+Mining+App. Desenvolvedor baseado na 🇹🇭+Tailândia/🇫🇷+França especializado em ⚛️+React, +Next.js, APIs+REST, e ⛁+bancos+de+dados. <a href='#chat'>Ver minha stack</a> ou <a href='#chat'>Perguntas 👇🏼</a>",
     "projects": "Projetos",
     "contact": "Contato",
-    "education": "",
     "experience": "Experiência",
-    "current_stack": "Stack Atual"
+    "education": "Educação"
   }
 }

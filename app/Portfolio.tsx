@@ -31,6 +31,21 @@ const Portfolio: React.FC = () => {
     }
   };
 
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Scroll to chat section
+    const chatElement = document.getElementById("chat");
+    if (chatElement) {
+      chatElement.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        if (chatBoxRef.current) {
+          chatBoxRef.current.setEmailMode(true);
+          chatBoxRef.current.setInputValue("Write your email here");
+        }
+      }, 500);
+    }
+  };
+
   const handleNavClick = (section: string) => {
     switch (section) {
       case "stack":
@@ -40,9 +55,7 @@ const Portfolio: React.FC = () => {
           chatElement.scrollIntoView({ behavior: "smooth" });
           setTimeout(() => {
             if (chatBoxRef.current) {
-              chatBoxRef.current.submitMessage(
-                "What is your current favorite stack and why do you like it?"
-              );
+              chatBoxRef.current.submitMessage("Tell me about your tech stack");
             }
           }, 500);
         }
@@ -73,71 +86,89 @@ const Portfolio: React.FC = () => {
 
   const experiences = [
     {
-      year: 2024,
-      title: "Developer",
-      company: "Tech Corp",
-      details: ["Developed REST APIs", "Worked with React"],
+      year: "2023 - 2025",
+      title: "Freelance Developer",
+      company: "Freelance",
+      details: [
+        "Full stack development",
+        "Frontend development",
+        "Backend development",
+        "Telegram bots development",
+      ],
     },
     {
-      year: 2023,
-      title: "Developer",
-      company: "Tech Corp",
-      details: ["Full stack development", "Agile methodology"],
-    },
-    {
-      year: 2022,
-      title: "Developer",
-      company: "Tech Corp",
-      details: ["Frontend development", "UI/UX implementation"],
-    },
-    {
-      year: 2021,
-      title: "Developer",
-      company: "Start Up",
-      details: ["Web development", "Database design"],
+      year: "2021 - 2023",
+      title: "Developer Full Stack",
+      company: "Ninja Partners",
+      details: [
+        "Gamification Dashboard development",
+        "AWS Amplify & GraphQL integration",
+        "React & Node.js implementation",
+        "Airtable automation scripts",
+        "API integration (Reply.io/Woodpecker)",
+        "Database optimization & analysis",
+        "Back office efficiency improvements",
+      ],
     },
   ];
 
   const projects = [
     {
-      name: "E-commerce Platform",
-      year: "2022",
+      name: "Telegram Crypto Mining App for @",
+      nameLink: {
+        text: "WildMinerHash",
+        url: "https://web.telegram.org/a/#7626071294",
+      },
+      year: "2025",
       description:
-        "A full-featured online shopping platform with real-time inventory management.",
-      technologies: ["React", "Node.js", "MongoDB"],
+        "A full-featured Telegram Web App for crypto mining, I did the frontend only",
+      technologies: ["Next.js", "Tailwind CSS"],
+      link: "https://web.telegram.org/a/#7626071294",
     },
     {
-      name: "Social Media Dashboard",
-      year: "2021",
+      name: "Food delivery Telegram app for We deliver",
+      year: "2024 - 2025",
       description:
-        "Analytics and management dashboard for social media accounts.",
-      technologies: ["Vue.js", "Express", "PostgreSQL"],
+        "Food delivery app with Telegram bot for restaurant and drivers, scraping data from the web into the database",
+      technologies: ["Next.js", "Cloudflare Workers", "D1 database"],
+      link: "https://github.com/johndoe/food-delivery-telegram-app",
     },
     {
-      name: "Task Management App",
-      year: "2020",
-      description: "Collaborative task management solution.",
-      technologies: ["React", "Firebase", "Material-UI"],
+      name: "Gamification Dashboard for @",
+      nameLink: {
+        text: "Ninja Partners",
+        url: "https://www.ninja.partners/",
+      },
+      year: "2021 - 2022",
+      description:
+        "Gamification of employee results plus client campaign Trusted by Ninja Partners",
+      technologies: ["React", "Next.js", "AWS Amplify", "DynamoDB", "GraphQL"],
+      link: "https://github.com/johndoe/gamification-dashboard",
     },
   ];
   const education = [
     {
-      degree: "Master of Science in Computer Science",
-      institution: "Tech University",
-      year: "2022",
+      degree: "Le Réacteur bootcamp",
+      institution: "Le Réacteur",
+      year: "2021",
       details: [
-        "Specialized in Artificial Intelligence",
-        "Thesis on Deep Learning applications in NLP",
+        "Full stack development",
+        "Agile methodology",
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
       ],
     },
     {
-      degree: "Bachelor of Science in Software Engineering",
-      institution: "State University",
-      year: "2020",
-      details: [
-        "Dean's List for 4 consecutive years",
-        "Capstone project: Developing a real-time collaboration tool",
-      ],
+      degree: "ABC Music Technology",
+      institution: "University of the Art London (LCC)",
+      year: "2011",
+    },
+    {
+      degree: "Bachelor of Electrical engineering and industrial computing",
+      institution: "Université Côte d'Azur",
+      year: "2010",
     },
   ];
 
@@ -171,7 +202,8 @@ const Portfolio: React.FC = () => {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="mailto:john.doe@example.com"
+                href="#"
+                onClick={handleEmailClick}
                 className="text-[#6482AD] hover:text-[#7FA1C3] transition-colors">
                 <Mail className="w-6 h-6" />
               </a>
@@ -256,11 +288,42 @@ const Portfolio: React.FC = () => {
                 <div
                   key={exp.year}
                   className="border-b border-border hover:bg-white/20 bg-gradient-to-b from-[#E2DAD6]/0 via-[#E2DAD6]/10 to-[#E2DAD6]/40 px-4 p-0 rounded w-full">
-                  <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem
-                      value={exp.year.toString()}
-                      className="border-none ">
-                      <AccordionTrigger className="hover:no-underline flex justify-between">
+                  {exp.details && exp.details.length > 0 ? (
+                    <Accordion type="single" collapsible className="w-full">
+                      <AccordionItem
+                        value={exp.year.toString()}
+                        className="border-none ">
+                        <AccordionTrigger className="hover:no-underline flex justify-between">
+                          <span className="text-2xl font-bold text-[#7FA1C3]">
+                            {exp.year}
+                          </span>
+                          <div className="flex-1 flex justify-center items-center">
+                            <div className="text-center">
+                              <div className="text-lg text-muted-foreground">
+                                {exp.title}
+                              </div>
+                              <div className="text-sm text-right text-muted-foreground">
+                                {exp.company}
+                              </div>
+                            </div>
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="pt-2">
+                          <div className="flex flex-wrap gap-2">
+                            {exp.details.map((detail, index) => (
+                              <span
+                                key={index}
+                                className="px-2 py-1 bg-[#7FA1C3]/10 text-[#6482AD] rounded-md text-sm font-medium shadow-sm border border-[#7FA1C3]/20">
+                                {detail}
+                              </span>
+                            ))}
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  ) : (
+                    <div className="py-4">
+                      <div className="flex justify-between items-center">
                         <span className="text-2xl font-bold text-[#7FA1C3]">
                           {exp.year}
                         </span>
@@ -274,18 +337,9 @@ const Portfolio: React.FC = () => {
                             </div>
                           </div>
                         </div>
-                      </AccordionTrigger>
-                      <AccordionContent className="pt-2">
-                        <div className="w-full mx-auto text-center">
-                          <ul className="list-disc inline-block text-left text-sm text-muted-foreground">
-                            {exp.details.map((detail, index) => (
-                              <li key={index}>{detail}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -308,6 +362,15 @@ const Portfolio: React.FC = () => {
                           <div className="  text-left">
                             <h3 className="text-xl font-medium text-[#7FA1C3]">
                               {project.name}
+                              {project.nameLink && (
+                                <a
+                                  href={project.nameLink.url}
+                                  className="text-[#7FA1C3] underline hover:text-[#5A7BA3]"
+                                  target="_blank"
+                                  rel="noopener noreferrer">
+                                  {project.nameLink.text}
+                                </a>
+                              )}
                             </h3>
                             <p className="text-muted-foreground">
                               {project.year}
@@ -346,27 +409,44 @@ const Portfolio: React.FC = () => {
                 <div
                   key={edu.degree}
                   className="border-b border-border hover:bg-white/20 bg-gradient-to-b from-[#E2DAD6]/0 via-[#E2DAD6]/10 to-[#E2DAD6]/40 px-4 p-0 rounded w-full">
-                  <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value={edu.degree} className="border-none">
-                      <AccordionTrigger className="hover:no-underline w-full">
-                        <div className="text-left w-full">
-                          <h3 className="text-xl font-medium text-[#7FA1C3]">
-                            {edu.degree}
-                          </h3>
-                          <p className="text-muted-foreground">
-                            {edu.institution} • {edu.year}
-                          </p>
-                        </div>
-                      </AccordionTrigger>
-                      <AccordionContent className="pt-2">
-                        <ul className="list-disc pl-4 text-sm text-muted-foreground">
-                          {edu.details.map((detail, index) => (
-                            <li key={index}>{detail}</li>
-                          ))}
-                        </ul>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
+                  {edu.details && edu.details.length > 0 ? (
+                    <Accordion type="single" collapsible className="w-full">
+                      <AccordionItem value={edu.degree} className="border-none">
+                        <AccordionTrigger className="hover:no-underline w-full">
+                          <div className="text-left w-full">
+                            <h3 className="text-xl font-medium text-[#7FA1C3]">
+                              {edu.degree}
+                            </h3>
+                            <p className="text-muted-foreground">
+                              {edu.institution} • {edu.year}
+                            </p>
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="pt-2">
+                          <div className="flex flex-wrap gap-2">
+                            {edu.details.map((detail, index) => (
+                              <span
+                                key={index}
+                                className="px-2 py-1 bg-[#7FA1C3]/10 text-[#6482AD] rounded-md text-sm font-medium shadow-sm border border-[#7FA1C3]/20">
+                                {detail}
+                              </span>
+                            ))}
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  ) : (
+                    <div className="py-4">
+                      <div className="text-left w-full">
+                        <h3 className="text-xl font-medium text-[#7FA1C3]">
+                          {edu.degree}
+                        </h3>
+                        <p className="text-muted-foreground">
+                          {edu.institution} • {edu.year}
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
