@@ -486,7 +486,7 @@ const Portfolio: React.FC = () => {
           </div>
 
           {/* AI Chat Section */}
-          <div className="max-w-2xl mx-auto p-4" id="chat">
+          <div className="max-w p-4" id="chat">
             <div className="bg-gradient-to-r from-[#7FA1C3]/15 to-[#E2DAD6]/40 p-4 rounded-lg shadow-sm border border-[#7FA1C3]/20">
               <AIChatBox ref={chatBoxRef} />
             </div>

@@ -350,7 +350,7 @@ Click here to open your email client: [Open Email](${mailto})`,
                             {children}
                           </h2>
                         ),
-                        p: ({ children }) => <p className="my-2">{children}</p>,
+                        p: ({ children }) => <p className="p-1">{children}</p>,
                       }}>
                       {message.content}
                     </ReactMarkdown>
