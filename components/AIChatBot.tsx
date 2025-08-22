@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2, Send } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { useLanguage } from "@/hooks/languageContext";
 
 interface Message {
   role: "user" | "assistant";
@@ -25,16 +26,27 @@ export interface AIChatBoxRef {
 }
 
 export const AIChatBox = forwardRef<AIChatBoxRef>((props, ref) => {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "assistant",
-      content: "Hi! Ask me about my professional experience and skills!",
-    },
-  ]);
+  const { t, language } = useLanguage();
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [isInitialized, setIsInitialized] = useState(false);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isEmailMode, setIsEmailMode] = useState(false);
+  const [showModeButtons, setShowModeButtons] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Initialize or update welcome message when language changes
+  useEffect(() => {
+    if (!isInitialized || !isEmailMode) {
+      setMessages([
+        {
+          role: "assistant",
+          content: t("hiAskMeAbout"),
+        },
+      ]);
+      setIsInitialized(true);
+    }
+  }, [language, t, isInitialized, isEmailMode]);
 
   useImperativeHandle(ref, () => ({
     setInputValue: (value: string) => {
@@ -60,15 +72,14 @@ export const AIChatBox = forwardRef<AIChatBoxRef>((props, ref) => {
         setMessages([
           {
             role: "assistant",
-            content:
-              "📧 **Email Mode Activated!**\n\nPlease write your email below. I'll help you send it using your default email client!\n\n*[Click here to go back to chat mode](?back)*",
+            content: t("emailModeActivated"),
           },
         ]);
       } else {
         setMessages([
           {
             role: "assistant",
-            content: "Hi! Ask me about my professional experience and skills!",
+            content: t("hiAskMeAbout"),
           },
         ]);
       }
@@ -93,7 +104,7 @@ export const AIChatBox = forwardRef<AIChatBoxRef>((props, ref) => {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage }),
+        body: JSON.stringify({ message: userMessage, language }),
       });
 
       if (!response.ok) throw new Error("Failed to get response");
@@ -160,7 +171,7 @@ export const AIChatBox = forwardRef<AIChatBoxRef>((props, ref) => {
         ...prev,
         {
           role: "assistant",
-          content: "Sorry, I encountered an error. Please try again.",
+          content: t("chatError"),
         },
       ]);
     } finally {
@@ -177,6 +188,7 @@ export const AIChatBox = forwardRef<AIChatBoxRef>((props, ref) => {
         body: JSON.stringify({
           message: emailContent,
           isEmail: true,
+          language,
         }),
       });
 
@@ -189,29 +201,38 @@ export const AIChatBox = forwardRef<AIChatBoxRef>((props, ref) => {
         emailContent
       )}`;
 
-      // Open email client
-      window.open(mailto, "_self");
+      // Hide buttons and switch to chat mode immediately
+      setShowModeButtons(false);
+      setIsEmailMode(false);
 
+      // Add success message with email link
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content: `✅ **Email sent successfully!**\n\nYour email has been opened in your default email client. Please complete sending it from there.\n\n📧 **Email preview:**\n*To: idevandyou@gmail.com*\n*Subject: Contact from Portfolio*\n\n---\n\n**Your message:** ${emailContent}\n\n---\n\n*[Click here to send with your email client](${mailto})*`,
+          content: `${t("emailSentSuccessfully")
+            .replace("{message}", emailContent)
+            .replace("{mailto}", mailto)}
+
+Click here to open your email client: [Open Email](${mailto})`,
         },
       ]);
+
+      // Also auto-open email client in new tab
+      setTimeout(() => {
+        window.open(mailto, "_blank");
+      }, 500);
     } catch (error) {
-      console.error("Email error:", error);
+      console.error("🔸 Email error:", error);
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content:
-            "❌ Sorry, there was an error preparing your email. Please try again or contact me directly at idevandyou@gmail.com",
+          content: t("emailError"),
         },
       ]);
     } finally {
       setIsLoading(false);
-      setIsEmailMode(false);
     }
   };
 
@@ -251,49 +272,49 @@ export const AIChatBox = forwardRef<AIChatBoxRef>((props, ref) => {
     <Card className="w-full bg-[#F5EDED]/80 border border-[#7FA1C3]/30">
       <CardHeader className="">
         <CardTitle className="text-xl font-semibold text-[#6482AD]">
-          Want to know more about me?
+          {t("wantToKnowMore")}
         </CardTitle>
-        <div className="flex gap-2 mt-2">
-          <Button
-            onClick={() => {
-              setIsEmailMode(true);
-              setMessages([
-                {
-                  role: "assistant",
-                  content:
-                    "📧 **Email Mode Activated!**\n\nPlease write your email below. I'll help you send it using your default email client!\n\n*[Click 'Chat Mode' to go back to chatting]*",
-                },
-              ]);
-            }}
-            variant="outline"
-            size="sm"
-            className="text-[#6482AD] border-[#6482AD] hover:bg-[#6482AD] hover:text-white">
-            📧 Email Me
-          </Button>
-          <Button
-            onClick={() => {
-              setIsEmailMode(false);
-              setMessages([
-                {
-                  role: "assistant",
-                  content:
-                    "Hi! Ask me about my professional experience and skills!",
-                },
-              ]);
-            }}
-            variant="outline"
-            size="sm"
-            className={`${
-              !isEmailMode
-                ? "bg-[#6482AD] text-white"
-                : "text-[#6482AD] border-[#6482AD] hover:bg-[#6482AD] hover:text-white"
-            }`}>
-            💬 Chat Mode
-          </Button>
-        </div>
+        {/* {showModeButtons && (
+          <div className="flex gap-2 mt-2">
+            <Button
+              onClick={() => {
+                setIsEmailMode(true);
+                setMessages([
+                  {
+                    role: "assistant",
+                    content: t("emailModeActivated"),
+                  },
+                ]);
+              }}
+              variant="outline"
+              size="sm"
+              className="text-[#6482AD] border-[#6482AD] hover:bg-[#6482AD] hover:text-white">
+              {t("emailMe")}
+            </Button>
+            <Button
+              onClick={() => {
+                setIsEmailMode(false);
+                setMessages([
+                  {
+                    role: "assistant",
+                    content: t("hiAskMeAbout"),
+                  },
+                ]);
+              }}
+              variant="outline"
+              size="sm"
+              className={`${
+                !isEmailMode
+                  ? "bg-[#6482AD] text-white"
+                  : "text-[#6482AD] border-[#6482AD] hover:bg-[#6482AD] hover:text-white"
+              }`}>
+              {t("chatMode")}
+            </Button>
+          </div>
+        )} */}
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="h-[300px] overflow-y-auto space-y-4 p-4">
+        <div className="h-[300px] overflow-y-auto space-y-4 ">
           {messages.map((message, index) => (
             <div
               key={index}
@@ -301,7 +322,7 @@ export const AIChatBox = forwardRef<AIChatBoxRef>((props, ref) => {
                 message.role === "user" ? "justify-end" : "justify-start"
               }`}>
               <div
-                className={`max-w-[80%] rounded-lg p-3 ${
+                className={`max-w-[80%] rounded-lg p-2 ${
                   message.role === "user"
                     ? "bg-[#7FA1C3] text-white shadow-sm"
                     : "bg-[#E2DAD6]/25 border border-[#7FA1C3]/20 text-[#6482AD] shadow-md"
@@ -346,9 +367,7 @@ export const AIChatBox = forwardRef<AIChatBoxRef>((props, ref) => {
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={
-              isEmailMode ? "Write your email here..." : "Ask me anything ..."
-            }
+            placeholder={isEmailMode ? t("writeEmailHere") : t("askMeAnything")}
             disabled={isLoading}
             className="flex-1 border-[#7FA1C3]/30 focus-visible:ring-[#7FA1C3] text-[#6482AD] placeholder:text-[#6482AD] bg-white/60"
           />
@@ -356,7 +375,7 @@ export const AIChatBox = forwardRef<AIChatBoxRef>((props, ref) => {
             type="submit"
             disabled={isLoading}
             className="bg-[#6482AD] hover:bg-[#7FA1C3] text-white"
-            title={isEmailMode ? "Send Email" : "Send Message"}>
+            title={isEmailMode ? t("sendEmail") : t("sendMessage")}>
             {isLoading ? (
               <Loader2 className="h-6 w-4 animate-spin" />
             ) : (

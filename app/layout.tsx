@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import { LanguageProvider } from "@/hooks/languageContext";
 import type React from "react";
-import "./globals.css";
+import "../styles/globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

@@ -2,8 +2,32 @@
 import { NextResponse } from "next/server";
 import { generateStreamingResponse } from "@/lib/ai-service";
 
+// Language mappings for response instructions
+const LANGUAGE_INSTRUCTIONS = {
+  en: "CRITICAL: You MUST respond ONLY in English. Every word, every sentence, every section title must be in English.",
+  fr: "CRITIQUE : Vous DEVEZ répondre UNIQUEMENT en français. Chaque mot, chaque phrase, chaque titre de section doit être en français.",
+  ru: "КРИТИЧНО: Вы ДОЛЖНЫ отвечать ТОЛЬКО на русском языке. Каждое слово, каждое предложение, каждый заголовок раздела должен быть на русском языке.",
+  no: "KRITISK: Du MÅ svare KUN på norsk. Hvert ord, hver setning, hver overskrift må være på norsk.",
+  gsw: "KRITISCH: Du MUESCH NUR uf Schwizerdütsch antworte. Jedes Wort, jede Satz, jede Titel muess uf Schwizerdütsch sii.",
+  ja: "重要：日本語のみで回答してください。すべての単語、すべての文、すべてのセクションタイトルは日本語でなければなりません。",
+  zh: "关键：您必须仅用中文回答。每个词、每个句子、每个章节标题都必须是中文。",
+  es: "CRÍTICO: Debes responder ÚNICAMENTE en español. Cada palabra, cada oración, cada título de sección debe estar en español.",
+  pt: "CRÍTICO: Você DEVE responder APENAS em português. Cada palavra, cada frase, cada título de seção deve estar em português.",
+};
+
 // IMPORTANT: Customize this section with your own information to personalize the chatbot
-const SYSTEM_PROMPT = `You are Olivier F., a freelance developer. Your responses should be:
+const getSystemPrompt = (
+  language: string = "en"
+) => `You are Olivier F., a freelance developer.
+
+${
+  LANGUAGE_INSTRUCTIONS[language as keyof typeof LANGUAGE_INSTRUCTIONS] ||
+  LANGUAGE_INSTRUCTIONS.en
+}
+
+Never use English section titles, headings, or any English words if the user is asking in another language.
+
+Your responses should be:
 - **SHORT & SCANNABLE** (2-4 sentences max per section)
 - **FORMATTED** with bullet points, lists, and emojis
 - **ENGAGING** and easy to read
@@ -128,11 +152,16 @@ Your background:
 13. **Be enthusiastic** about tech and career transition
 14. **End with a follow-up question** when appropriate
 
-Remember: Short, formatted, engaging responses that make people want to keep reading!`;
+Remember: Short, formatted, engaging responses that make people want to keep reading!
+
+FINAL REMINDER: ${
+  LANGUAGE_INSTRUCTIONS[language as keyof typeof LANGUAGE_INSTRUCTIONS] ||
+  LANGUAGE_INSTRUCTIONS.en
+}`;
 
 export async function POST(req: Request) {
   try {
-    const { message, isEmail } = await req.json();
+    const { message, isEmail, language = "en" } = await req.json();
 
     // Handle email requests differently
     if (isEmail) {
@@ -152,7 +181,7 @@ export async function POST(req: Request) {
     }
 
     const stream = await generateStreamingResponse([
-      { role: "system", content: SYSTEM_PROMPT },
+      { role: "system", content: getSystemPrompt(language) },
       { role: "user", content: message },
     ]);
 

@@ -20,7 +20,6 @@ const StyledAboutText: React.FC<StyledAboutTextProps> = ({
 
     // Split the text by spaces to process each token
     const parts = textWithPlaceholders.split(/(\s+)/);
-    console.log(parts);
 
     return parts.map((part, index) => {
       // If it's just whitespace, return it as is

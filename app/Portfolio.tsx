@@ -56,7 +56,7 @@ const Portfolio: React.FC = () => {
           chatElement.scrollIntoView({ behavior: "smooth" });
           setTimeout(() => {
             if (chatBoxRef.current) {
-              chatBoxRef.current.submitMessage("Tell me about your tech stack");
+              chatBoxRef.current.submitMessage(t("tellMeAboutYourTechStack"));
             }
           }, 500);
         }
@@ -88,73 +88,70 @@ const Portfolio: React.FC = () => {
   const experiences = [
     {
       year: "2023 - 2025",
-      title: "Freelance Developer",
-      company: "Freelance",
+      title: t("freelanceDeveloper"),
+      company: t("freelance"),
       details: [
-        "Full stack development",
-        "Frontend development",
-        "Backend development",
-        "Telegram bots development",
+        t("fullStackDevelopment"),
+        t("frontendDevelopment"),
+        t("backendDevelopment"),
+        t("telegramBotsDevelopment"),
       ],
     },
     {
       year: "2021 - 2023",
-      title: "Developer Full Stack",
-      company: "Ninja Partners",
+      title: t("developerFullStack"),
+      company: t("ninjaPartners"),
       details: [
-        "Gamification Dashboard development",
-        "AWS Amplify & GraphQL integration",
-        "React & Node.js implementation",
-        "Airtable automation scripts",
-        "API integration (Reply.io/Woodpecker)",
-        "Database optimization & analysis",
-        "Back office efficiency improvements",
+        t("gamificationDashboardDevelopment"),
+        t("awsAmplifyGraphQLIntegration"),
+        t("reactNodejsImplementation"),
+        t("airtableAutomationScripts"),
+        t("apiIntegrationReplyWoodpecker"),
+        t("databaseOptimizationAnalysis"),
+        t("backOfficeEfficiencyImprovements"),
       ],
     },
   ];
 
   const projects = [
     {
-      name: "Telegram Crypto Mining App for @",
+      name: t("telegramCryptoMiningApp"),
       nameLink: {
-        text: "WildMinerHash",
+        text: t("wildMinerHash"),
         url: "https://web.telegram.org/a/#7626071294",
       },
       year: "2025",
-      description:
-        "A full-featured Telegram Web App for crypto mining, I did the frontend only",
+      description: t("telegramCryptoMiningDescription"),
       technologies: ["Next.js", "Tailwind CSS"],
       link: "https://web.telegram.org/a/#7626071294",
     },
     {
-      name: "Food delivery Telegram app for We deliver",
+      name: t("foodDeliveryTelegramApp"),
       year: "2024 - 2025",
-      description:
-        "Food delivery app with Telegram bot for restaurant and drivers, scraping data from the web into the database",
+      description: t("foodDeliveryDescription"),
       technologies: ["Next.js", "Cloudflare Workers", "D1 database"],
       link: "https://github.com/johndoe/food-delivery-telegram-app",
     },
     {
-      name: "Gamification Dashboard for @",
+      name: t("gamificationDashboard"),
       nameLink: {
-        text: "Ninja Partners",
+        text: t("ninjaPartners"),
         url: "https://www.ninja.partners/",
       },
       year: "2021 - 2022",
-      description:
-        "Gamification of employee results plus client campaign Trusted by Ninja Partners",
+      description: t("gamificationDescription"),
       technologies: ["React", "Next.js", "AWS Amplify", "DynamoDB", "GraphQL"],
       link: "https://github.com/johndoe/gamification-dashboard",
     },
   ];
   const education = [
     {
-      degree: "Le Réacteur bootcamp",
-      institution: "Le Réacteur",
+      degree: t("leReacteurBootcamp"),
+      institution: t("leReacteur"),
       year: "2021",
       details: [
-        "Full stack development",
-        "Agile methodology",
+        t("fullStackDevelopment"),
+        t("agileMethodology"),
         "React",
         "Node.js",
         "Express",
@@ -162,13 +159,13 @@ const Portfolio: React.FC = () => {
       ],
     },
     {
-      degree: "ABC Music Technology",
-      institution: "University of the Art London (LCC)",
+      degree: t("abcMusicTechnology"),
+      institution: t("universityArtLondon"),
       year: "2011",
     },
     {
-      degree: "Bachelor of Electrical engineering and industrial computing",
-      institution: "Université Côte d'Azur",
+      degree: t("bachelorsElectricalEngineering"),
+      institution: t("universiteCoteAzur"),
       year: "2010",
     },
   ];
@@ -233,45 +230,45 @@ const Portfolio: React.FC = () => {
                 </CardDescription>
 
                 {/* Navigation Buttons */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-8 pt-2 w-full ml-1 pr-3">
+                <div className="flex flex-wrap md:flex-nowrap gap-1 sm:gap-2 mt-8 pt-2 w-full ml-1 pr-3">
                   <button
                     onClick={() => handleNavClick("stack")}
-                    className="px-6 py-[6px] bg-[#6482AD] bg-opacity-85 hover:bg-[#7FA1C3] text-white rounded-md transition-colors shadow-sm text-sm font-medium transform"
+                    className="flex-1 min-w-0 px-2 sm:px-4 md:px-6 py-[6px] bg-[#6482AD] bg-opacity-85 hover:bg-[#7FA1C3] text-white rounded-md transition-colors shadow-sm text-xs sm:text-sm font-medium transform"
                     style={{ transform: "skewX(-30deg)" }}>
                     <span
                       style={{ transform: "skewX(30deg)" }}
-                      className="block">
-                      See my stack
+                      className="block text-center leading-tight">
+                      {t("seeMyStack")}
                     </span>
                   </button>
                   <button
                     onClick={() => handleNavClick("questions")}
-                    className="px-6 py-[6px] bg-[#7FA1C3] bg-opacity-85 hover:bg-[#6482AD] text-white rounded-md transition-colors shadow-sm text-sm font-medium transform"
+                    className="flex-1 min-w-0 px-2 sm:px-4 md:px-6 py-[6px] bg-[#7FA1C3] bg-opacity-85 hover:bg-[#6482AD] text-white rounded-md transition-colors shadow-sm text-xs sm:text-sm font-medium transform"
                     style={{ transform: "skewX(-30deg)" }}>
                     <span
                       style={{ transform: "skewX(30deg)" }}
-                      className="block">
-                      Questions
+                      className="block text-center leading-tight">
+                      {t("questions")}
                     </span>
                   </button>
                   <button
                     onClick={() => handleNavClick("projects")}
-                    className="px-6 py-[6px] bg-[#E2DAD6] bg-opacity-85 hover:bg-[#7FA1C3] text-[#6482AD] hover:text-white rounded-md transition-colors shadow-sm text-sm font-medium transform"
+                    className="flex-1 min-w-0 px-2 sm:px-4 md:px-6 py-[6px] bg-[#E2DAD6] bg-opacity-85 hover:bg-[#7FA1C3] text-[#6482AD] hover:text-white rounded-md transition-colors shadow-sm text-xs sm:text-sm font-medium transform"
                     style={{ transform: "skewX(-30deg)" }}>
                     <span
                       style={{ transform: "skewX(30deg)" }}
-                      className="block">
-                      Projects
+                      className="block text-center leading-tight">
+                      {t("projects")}
                     </span>
                   </button>
                   <button
                     onClick={() => handleNavClick("education")}
-                    className="px-6 py-[6px] bg-[#E2DAD6] bg-opacity-85 hover:bg-[#7FA1C3] text-[#6482AD] hover:text-white rounded-md transition-colors shadow-sm text-sm font-medium transform"
+                    className="flex-1 min-w-0 px-2 sm:px-4 md:px-6 py-[6px] bg-[#E2DAD6] bg-opacity-85 hover:bg-[#7FA1C3] text-[#6482AD] hover:text-white rounded-md transition-colors shadow-sm text-xs sm:text-sm font-medium transform"
                     style={{ transform: "skewX(-30deg)" }}>
                     <span
                       style={{ transform: "skewX(30deg)" }}
-                      className="block">
-                      Education
+                      className="block text-center leading-tight">
+                      {t("education")}
                     </span>
                   </button>
                 </div>
