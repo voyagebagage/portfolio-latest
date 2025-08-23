@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
 }
@@ -11,8 +15,15 @@ body {
     text-wrap: balance;
   }
 }
-html {
-  scroll-behavior: smooth;
+
+/* Custom scrollbar for the language bar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 @layer base {
   :root {

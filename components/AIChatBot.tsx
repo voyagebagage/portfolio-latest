@@ -197,7 +197,7 @@ export const AIChatBox = forwardRef<AIChatBoxRef>((props, ref) => {
       await response.json();
 
       // Create mailto link
-      const mailto = `mailto:idevandyou@gmail.com?subject=Contact from Portfolio&body=${encodeURIComponent(
+      const mailto = `mailto:contact@foryou-i.dev?subject=Contact from Portfolio&body=${encodeURIComponent(
         emailContent
       )}`;
 

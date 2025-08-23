@@ -47,8 +47,8 @@
     "sendMessage": "Send Message",
     "hiAskMeAbout": "Hi! Ask me about my professional experience and skills!",
     "emailModeActivated": "📧 **Email Mode Activated!**\n\nPlease write your email below. I'll help you send it using your default email client!\n\n*[Click 'Chat Mode' to go back to chatting]*",
-    "emailSentSuccessfully": "✅ **Email sent successfully!**\n\nYour email has been opened in your default email client. Please complete sending it from there.\n\n📧 **Email preview:**\n*To: idevandyou@gmail.com*\n*Subject: Contact from Portfolio*\n\n---\n\n**Your message:** {message}\n\n---\n\n*[Click here to send with your email client]({mailto})*",
-    "emailError": "❌ Sorry, there was an error preparing your email. Please try again or contact me directly at idevandyou@gmail.com",
+    "emailSentSuccessfully": "✅ **Email sent successfully!**\n\nYour email has been opened in your default email client. Please complete sending it from there.\n\n📧 **Email preview:**\n*To: contact@foryou-i.dev*\n*Subject: Contact from Portfolio*\n\n---\n\n**Your message:** {message}\n\n---\n\n*[Click here to send with your email client]({mailto})*",
+    "emailError": "❌ Sorry, there was an error preparing your email. Please try again or contact me directly at contact@foryou-i.dev",
     "chatError": "Sorry, I encountered an error. Please try again.",
     "tellMeAboutYourTechStack": "Tell me about your tech stack"
   },
@@ -100,8 +100,8 @@
     "sendMessage": "Envoyer Message",
     "hiAskMeAbout": "Salut ! Demandez-moi des informations sur mon expérience professionnelle et mes compétences !",
     "emailModeActivated": "📧 **Mode Email Activé !**\n\nVeuillez écrire votre email ci-dessous. Je vous aiderai à l'envoyer avec votre client email par défaut !\n\n*[Cliquez sur 'Mode Chat' pour revenir au chat]*",
-    "emailSentSuccessfully": "✅ **Email envoyé avec succès !**\n\nVotre email a été ouvert dans votre client email par défaut. Veuillez terminer l'envoi à partir de là.\n\n📧 **Aperçu de l'email :**\n*À : idevandyou@gmail.com*\n*Sujet : Contact depuis Portfolio*\n\n---\n\n**Votre message :** {message}\n\n---\n\n*[Cliquez ici pour envoyer avec votre client email]({mailto})*",
-    "emailError": "❌ Désolé, il y a eu une erreur lors de la préparation de votre email. Veuillez réessayer ou me contacter directement à idevandyou@gmail.com",
+    "emailSentSuccessfully": "✅ **Email envoyé avec succès !**\n\nVotre email a été ouvert dans votre client email par défaut. Veuillez terminer l'envoi à partir de là.\n\n📧 **Aperçu de l'email :**\n*À : contact@foryou-i.dev*\n*Sujet : Contact depuis Portfolio*\n\n---\n\n**Votre message :** {message}\n\n---\n\n*[Cliquez ici pour envoyer avec votre client email]({mailto})*",
+    "emailError": "❌ Désolé, il y a eu une erreur lors de la préparation de votre email. Veuillez réessayer ou me contacter directement à contact@foryou-i.dev",
     "chatError": "Désolé, j'ai rencontré une erreur. Veuillez réessayer.",
     "tellMeAboutYourTechStack": "Parlez-moi de votre stack technique"
   },
@@ -153,8 +153,8 @@
     "sendMessage": "Отправить сообщение",
     "hiAskMeAbout": "Привет! Спрашивайте меня о моем профессиональном опыте и навыках!",
     "emailModeActivated": "📧 **Режим Email активирован!**\n\nПожалуйста, напишите ваш email ниже. Я помогу вам отправить его через ваш почтовый клиент!\n\n*[Нажмите 'Режим чата' чтобы вернуться к чату]*",
-    "emailSentSuccessfully": "✅ **Email отправлен успешно!**\n\nВаш email открыт в вашем почтовом клиенте по умолчанию. Пожалуйста, завершите отправку оттуда.\n\n📧 **Предпросмотр email:**\n*Кому: idevandyou@gmail.com*\n*Тема: Контакт с Портфолио*\n\n---\n\n**Ваше сообщение:** {message}\n\n---\n\n*[Нажмите здесь чтобы отправить через ваш email клиент]({mailto})*",
-    "emailError": "❌ Извините, произошла ошибка при подготовке вашего email. Пожалуйста, попробуйте снова или свяжитесь со мной напрямую idevandyou@gmail.com",
+    "emailSentSuccessfully": "✅ **Email отправлен успешно!**\n\nВаш email открыт в вашем почтовом клиенте по умолчанию. Пожалуйста, завершите отправку оттуда.\n\n📧 **Предпросмотр email:**\n*Кому: contact@foryou-i.dev*\n*Тема: Контакт с Портфолио*\n\n---\n\n**Ваше сообщение:** {message}\n\n---\n\n*[Нажмите здесь чтобы отправить через ваш email клиент]({mailto})*",
+    "emailError": "❌ Извините, произошла ошибка при подготовке вашего email. Пожалуйста, попробуйте снова или свяжитесь со мной напрямую contact@foryou-i.dev",
     "chatError": "Извините, я столкнулся с ошибкой. Пожалуйста, попробуйте снова.",
     "tellMeAboutYourTechStack": "Расскажите мне о вашем технологическом стеке"
   },
@@ -206,8 +206,8 @@
     "sendMessage": "Send Melding",
     "hiAskMeAbout": "Hei! Spør meg om min profesjonelle erfaring og ferdigheter!",
     "emailModeActivated": "📧 **E-post Modus Aktivert!**\n\nVennligst skriv din e-post nedenfor. Jeg hjelper deg å sende den med din standard e-postklient!\n\n*[Klikk 'Chat Modus' for å gå tilbake til chat]*",
-    "emailSentSuccessfully": "✅ **E-post sendt vellykket!**\n\nDin e-post har blitt åpnet i din standard e-postklient. Vennligst fullfør sendingen derfra.\n\n📧 **E-post forhåndsvisning:**\n*Til: idevandyou@gmail.com*\n*Emne: Kontakt fra Portfolio*\n\n---\n\n**Din melding:** {message}\n\n---\n\n*[Klikk her for å sende med din e-postklient]({mailto})*",
-    "emailError": "❌ Beklager, det oppstod en feil ved klargjøring av din e-post. Vennligst prøv igjen eller kontakt meg direkte på idevandyou@gmail.com",
+    "emailSentSuccessfully": "✅ **E-post sendt vellykket!**\n\nDin e-post har blitt åpnet i din standard e-postklient. Vennligst fullfør sendingen derfra.\n\n📧 **E-post forhåndsvisning:**\n*Til: contact@foryou-i.dev*\n*Emne: Kontakt fra Portfolio*\n\n---\n\n**Din melding:** {message}\n\n---\n\n*[Klikk her for å sende med din e-postklient]({mailto})*",
+    "emailError": "❌ Beklager, det oppstod en feil ved klargjøring av din e-post. Vennligst prøv igjen eller kontakt meg direkte på contact@foryou-i.dev",
     "chatError": "Beklager, jeg støtte på en feil. Vennligst prøv igjen.",
     "tellMeAboutYourTechStack": "Fortell meg om din teknologi-stack"
   },
@@ -259,8 +259,8 @@
     "sendMessage": "Nachricht schicke",
     "hiAskMeAbout": "Hoi! Frag mi über mini professionelli Erfahrig und Fähigkeite!",
     "emailModeActivated": "📧 **E-Mail Modus aktiviert!**\n\nBitte schrib dis E-Mail unedra. Ich hilf der s mit dim Standard E-Mail Client z schicke!\n\n*[Klick 'Chat Modus' zum zrugg zum Chat]*",
-    "emailSentSuccessfully": "✅ **E-Mail erfolgriich gschickt!**\n\nDis E-Mail isch i dim Standard E-Mail Client uufgange. Bitte mach s Schicke dert fertig.\n\n📧 **E-Mail Vorschau:**\n*A: idevandyou@gmail.com*\n*Betreff: Kontakt vom Portfolio*\n\n---\n\n**Dini Nachricht:** {message}\n\n---\n\n*[Klick do zum mit dim E-Mail Client schicke]({mailto})*",
-    "emailError": "❌ Sorry, s het en Fehler gä bi de Vorbereitig vo dim E-Mail. Bitte probier nomol oder kontaktier mi direkt unter idevandyou@gmail.com",
+    "emailSentSuccessfully": "✅ **E-Mail erfolgriich gschickt!**\n\nDis E-Mail isch i dim Standard E-Mail Client uufgange. Bitte mach s Schicke dert fertig.\n\n📧 **E-Mail Vorschau:**\n*A: contact@foryou-i.dev*\n*Betreff: Kontakt vom Portfolio*\n\n---\n\n**Dini Nachricht:** {message}\n\n---\n\n*[Klick do zum mit dim E-Mail Client schicke]({mailto})*",
+    "emailError": "❌ Sorry, s het en Fehler gä bi de Vorbereitig vo dim E-Mail. Bitte probier nomol oder kontaktier mi direkt unter contact@foryou-i.dev",
     "chatError": "Sorry, ich bi uf en Fehler gstoche. Bitte probier nomol.",
     "tellMeAboutYourTechStack": "Verzell mir vo dinere Tech Stack"
   },
@@ -312,8 +312,8 @@
     "sendMessage": "メッセージ送信",
     "hiAskMeAbout": "こんにちは！私のプロフェッショナルな経験とスキルについて聞いてください！",
     "emailModeActivated": "📧 **メールモード有効！**\n\n下にメールを書いてください。デフォルトのメールクライアントで送信するお手伝いをします！\n\n*['チャットモード'をクリックしてチャットに戻る]*",
-    "emailSentSuccessfully": "✅ **メール送信成功！**\n\nメールがデフォルトのメールクライアントで開かれました。そこから送信を完了してください。\n\n📧 **メールプレビュー：**\n*宛先： idevandyou@gmail.com*\n*件名： Portfolioからの連絡*\n\n---\n\n**あなたのメッセージ：** {message}\n\n---\n\n*[メールクライアントで送信するにはここをクリック]({mailto})*",
-    "emailError": "❌ 申し訳ありません、メールの準備中にエラーが発生しました。もう一度お試しいただくか、idevandyou@gmail.comに直接ご連絡ください",
+    "emailSentSuccessfully": "✅ **メール送信成功！**\n\nメールがデフォルトのメールクライアントで開かれました。そこから送信を完了してください。\n\n📧 **メールプレビュー：**\n*宛先： contact@foryou-i.dev*\n*件名： Portfolioからの連絡*\n\n---\n\n**あなたのメッセージ：** {message}\n\n---\n\n*[メールクライアントで送信するにはここをクリック]({mailto})*",
+    "emailError": "❌ 申し訳ありません、メールの準備中にエラーが発生しました。もう一度お試しいただくか、contact@foryou-i.devに直接ご連絡ください",
     "chatError": "申し訳ありません、エラーが発生しました。もう一度お試しください。",
     "tellMeAboutYourTechStack": "あなたの技術スタックについて教えてください"
   },
@@ -365,8 +365,8 @@
     "sendMessage": "发送消息",
     "hiAskMeAbout": "您好！问我关于我的专业经验和技能的问题！",
     "emailModeActivated": "📧 **邮件模式已激活！**\n\n请在下方写您的邮件。我将帮助您使用默认邮件客户端发送！\n\n*[点击'聊天模式'返回聊天]*",
-    "emailSentSuccessfully": "✅ **邮件发送成功！**\n\n您的邮件已在默认邮件客户端中打开。请在那里完成发送。\n\n📧 **邮件预览：**\n*收件人： idevandyou@gmail.com*\n*主题： 来自Portfolio的联系*\n\n---\n\n**您的消息：** {message}\n\n---\n\n*[点击这里使用您的邮件客户端发送]({mailto})*",
-    "emailError": "❌ 抱歉，准备您的邮件时出现错误。请重试或直接联系我 idevandyou@gmail.com",
+    "emailSentSuccessfully": "✅ **邮件发送成功！**\n\n您的邮件已在默认邮件客户端中打开。请在那里完成发送。\n\n📧 **邮件预览：**\n*收件人： contact@foryou-i.dev*\n*主题： 来自Portfolio的联系*\n\n---\n\n**您的消息：** {message}\n\n---\n\n*[点击这里使用您的邮件客户端发送]({mailto})*",
+    "emailError": "❌ 抱歉，准备您的邮件时出现错误。请重试或直接联系我 contact@foryou-i.dev",
     "chatError": "抱歉，我遇到了一个错误。请重试。",
     "tellMeAboutYourTechStack": "告诉我您的技术栈"
   },
@@ -418,8 +418,8 @@
     "sendMessage": "Enviar Mensaje",
     "hiAskMeAbout": "¡Hola! ¡Pregúntame sobre mi experiencia profesional y habilidades!",
     "emailModeActivated": "📧 **¡Modo Email Activado!**\n\nPor favor escribe tu email abajo. ¡Te ayudaré a enviarlo usando tu cliente de email predeterminado!\n\n*[Haz clic en 'Modo Chat' para volver al chat]*",
-    "emailSentSuccessfully": "✅ **¡Email enviado exitosamente!**\n\nTu email se ha abierto en tu cliente de email predeterminado. Por favor completa el envío desde ahí.\n\n📧 **Vista previa del email:**\n*Para: idevandyou@gmail.com*\n*Asunto: Contacto desde Portfolio*\n\n---\n\n**Tu mensaje:** {message}\n\n---\n\n*[Haz clic aquí para enviar con tu cliente de email]({mailto})*",
-    "emailError": "❌ Lo siento, hubo un error preparando tu email. Por favor inténtalo de nuevo o contáctame directamente en idevandyou@gmail.com",
+    "emailSentSuccessfully": "✅ **¡Email enviado exitosamente!**\n\nTu email se ha abierto en tu cliente de email predeterminado. Por favor completa el envío desde ahí.\n\n📧 **Vista previa del email:**\n*Para: contact@foryou-i.dev*\n*Asunto: Contacto desde Portfolio*\n\n---\n\n**Tu mensaje:** {message}\n\n---\n\n*[Haz clic aquí para enviar con tu cliente de email]({mailto})*",
+    "emailError": "❌ Lo siento, hubo un error preparando tu email. Por favor inténtalo de nuevo o contáctame directamente en contact@foryou-i.dev",
     "chatError": "Lo siento, encontré un error. Por favor inténtalo de nuevo.",
     "tellMeAboutYourTechStack": "Cuéntame sobre tu stack tecnológico"
   },
@@ -471,8 +471,8 @@
     "sendMessage": "Enviar Mensagem",
     "hiAskMeAbout": "Oi! Me pergunte sobre minha experiência profissional e habilidades!",
     "emailModeActivated": "📧 **Modo Email Ativado!**\n\nPor favor escreva seu email abaixo. Vou ajudá-lo a enviá-lo usando seu cliente de email padrão!\n\n*[Clique em 'Modo Chat' para voltar ao chat]*",
-    "emailSentSuccessfully": "✅ **Email enviado com sucesso!**\n\nSeu email foi aberto em seu cliente de email padrão. Por favor complete o envio de lá.\n\n📧 **Prévia do email:**\n*Para: idevandyou@gmail.com*\n*Assunto: Contato do Portfolio*\n\n---\n\n**Sua mensagem:** {message}\n\n---\n\n*[Clique aqui para enviar com seu cliente de email]({mailto})*",
-    "emailError": "❌ Desculpe, houve um erro preparando seu email. Por favor tente novamente ou me contate diretamente em idevandyou@gmail.com",
+    "emailSentSuccessfully": "✅ **Email enviado com sucesso!**\n\nSeu email foi aberto em seu cliente de email padrão. Por favor complete o envio de lá.\n\n📧 **Prévia do email:**\n*Para: contact@foryou-i.dev*\n*Assunto: Contato do Portfolio*\n\n---\n\n**Sua mensagem:** {message}\n\n---\n\n*[Clique aqui para enviar com seu cliente de email]({mailto})*",
+    "emailError": "❌ Desculpe, houve um erro preparando seu email. Por favor tente novamente ou me contate diretamente em contact@foryou-i.dev",
     "chatError": "Desculpe, encontrei um erro. Por favor tente novamente.",
     "tellMeAboutYourTechStack": "Conte-me sobre sua stack tecnológica"
   }
