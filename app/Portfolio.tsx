@@ -217,6 +217,7 @@ const Portfolio: React.FC = () => {
 
           {/* About Section */}
           <Card className="mb-8 -mx-2 bg-white/80 shadow-md border border-[#7FA1C3]/30 hover:border-[#7FA1C3]/50 transition-colors ">
+            <div className="bg-transparent border-[10px] border-[#7FA1C3]/20 rounded-md">
               <CardHeader>
                 <CardTitle className="text-2xl text-[#6482AD] font-bold">
                   {t("title")}
@@ -272,6 +273,7 @@ const Portfolio: React.FC = () => {
                   </button>
                 </div>
               </CardHeader>
+            </div>
           </Card>
 
           {/* Experience Section */}

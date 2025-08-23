@@ -43,8 +43,8 @@ body {
     --accent-foreground: 351 30% 95%; /* #F5EDED */
     --destructive: 0 84% 60%;
     --destructive-foreground: 351 30% 95%; /* #F5EDED */
-    --border: 215 36% 90%; /* Light blue border */
-    --input: 215 36% 95%; /* Very light blue input */
+    --border: 25 16% 86%; /* #E2DAD6 */
+    --input: 25 16% 86%; /* #E2DAD6 */
     --ring: 215 36% 63%; /* #7FA1C3 */
     --chart-1: 218 31% 53%; /* #6482AD */
     --chart-2: 215 36% 63%; /* #7FA1C3 */
@@ -78,8 +78,8 @@ body {
     --accent-foreground: 218 31% 33%; /* Darker version of #6482AD */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 351 30% 95%; /* #F5EDED */
-    --border: 215 36% 40%; /* Darker blue border */
-    --input: 215 36% 35%; /* Darker blue input */
+    --border: 25 16% 50%; /* Darker version of #E2DAD6 */
+    --input: 25 16% 50%; /* Darker version of #E2DAD6 */
     --ring: 215 36% 63%; /* #7FA1C3 */
     --chart-1: 215 36% 63%; /* #7FA1C3 */
     --chart-2: 25 16% 86%; /* #E2DAD6 */
