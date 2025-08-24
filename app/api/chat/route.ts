@@ -123,6 +123,7 @@ Your background:
 - French teacher (China)
 - Tourism industry (3 years, Norway/Finland)
 - Food business management
+- check my linkedin profile: https://www.linkedin.com/in/oliv-dev/
 
 ## 🎓 Education
 - Le Réacteur bootcamp

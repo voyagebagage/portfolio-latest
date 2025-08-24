@@ -186,14 +186,14 @@ const Portfolio: React.FC = () => {
             </h1>
             <div className="flex items-center space-x-4">
               <a
-                href="https://github.com/johndoe"
+                href="https://github.com/voyagebagage"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#6482AD] hover:text-[#7FA1C3] transition-colors">
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="https://linkedin.com/in/johndoe"
+                href="https://linkedin.com/in/oliv-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#6482AD] hover:text-[#7FA1C3] transition-colors">
